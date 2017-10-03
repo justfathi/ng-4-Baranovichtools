@@ -1,17 +1,3 @@
-.header-title {
-  min-height: 80px; 
-  width: 100%; 
-  display: flex;
-  flex-flow: wrap column;
-  justify-content: center;
-  align-items: center;
-  margin: 0 auto;
-  background: transparent; 
-  line-height:1.6; 
-  color: #fff;
- }
-
-
 .is-active {
   background-color: red;
 }
@@ -20,17 +6,8 @@
   font-size: 20px;
 }
 
-/* message */
-::ng-deep snack-bar-container.custom-class {
-  background:  #323941;
-}
-
-::ng-deep .custom-class .mat-simple-snackbar {
-  color: #fff;
-}
-
-::ng-deep  .mat-simple-snackbar-action {
-  color: red;
+.logo-href {
+  padding-right: 18px;
 }
 
 @media (min-width: 1600px) {
@@ -41,13 +18,13 @@
   }
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 1150px) {
   .hide-small {
     display: none
   }
 }
 
-@media (min-width: 1000px) {
+@media (min-width: 1150px) {
   .hide-large {
     display: none
   }
@@ -56,6 +33,9 @@
 @media (max-width: 400px) {
   .menu-label {
   	display: none
+  }
+  .logo-href {
+    padding-right: 0;
   }
 }
 

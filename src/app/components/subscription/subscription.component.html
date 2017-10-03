@@ -1,15 +1,16 @@
-<!-- <p style='text-align: center'>Оставить сообщение</p>
+<p style='text-align: center' *ngIf='!sent'>Подписаться</p>
+<p style='text-align: center' *ngIf='sent'>Проверьте вашу почту</p>
   <form class="form" [formGroup]="form" (ngSubmit)="onSubmit()">
     <md-form-field class="full-width">
-      <input mdInput placeholder="Имя" formControlName="name">
+      <input mdInput placeholder="Имя" formControlName="firstname" requred  minlength="3">
     </md-form-field>
     <md-form-field class="full-width">
-      <input mdInput placeholder="Почта" formControlName="email">
+      <input mdInput placeholder="Фамилия" formControlName="lastname" requred  minlength="3">
     </md-form-field>
     <md-form-field class="full-width">
-      <input mdInput  placeholder="Сообщение" formControlName="message">
+      <input mdInput placeholder="Почта" formControlName="email"  required
+            pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,6})+$">
     </md-form-field>
-    <button md-button type="submit" [disabled]="form.invalid">Послать</button>
-  </form> -->
-  <p>Unde construction!</p>
+   <button md-button type="submit" [disabled]="form.invalid">Послать</button>
+  </form>
 

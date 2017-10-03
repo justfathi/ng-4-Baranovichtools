@@ -5,6 +5,14 @@ a {
 a:hover {
     opacity: 1;
 }
+.href {
+    cursor: pointer;
+    color: #a71d1d;
+    opacity: 0.9;
+}
+.href:hover {
+    opacity: 1
+}
 
 #membership>div {
     padding: 10px 20px 30px;
@@ -90,6 +98,12 @@ a:hover {
 .membership-cost,
 .tabs h4 {
     text-align: left
+}
+
+.align {
+    display: block;
+    margin: 0 auto;
+    max-width: 600px;
 }
 
 @media (max-width: 45em) {

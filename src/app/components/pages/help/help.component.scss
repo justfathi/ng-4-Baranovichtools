@@ -1,10 +1,11 @@
 p {
 	text-indent: 20px;
 }
-a {
+.href {
+	cursor: pointer;
 	color: #a71d1d;
 	opacity: 0.9;
 }
-a:hover {
+.href:hover {
 	opacity: 1
 }

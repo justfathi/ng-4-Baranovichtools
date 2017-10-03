@@ -1,2 +1,14 @@
+/* messages */
+/* message */
+::ng-deep snack-bar-container.custom-class {
+  background: #323941;
+}
 
+::ng-deep .custom-class .mat-simple-snackbar {
+  color: #fff;
+}
+
+::ng-deep  .mat-simple-snackbar-action {
+  color: red;
+}
 

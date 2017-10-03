@@ -13,4 +13,7 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
   	this.service.onClickAddScript('map');
   }
+  openMessage(){
+  	this.service.openMessage()
+  }
 }

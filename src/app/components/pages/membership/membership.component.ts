@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AppService } from '../../../services/app.service';
 
 @Component({
   selector: 'app-membership',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MembershipComponent implements OnInit {
 
-  constructor() { }
+  constructor(private service:AppService) { }
 
   ngOnInit() {
+  }
+
+   openMessage(){
+  	this.service.openMessage()
   }
 
 }

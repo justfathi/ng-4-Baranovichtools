@@ -1,6 +1,6 @@
 import { Injectable} from '@angular/core';
 // import { Subject } from 'rxjs/Subject';
-import { AngularFireDatabase, FirebaseObjectObservable, FirebaseListObservable } from 'angularfire2/database';
+// import { AngularFireDatabase  } from 'angularfire2/database';
 import { MdDialog } from '@angular/material';
 import { MessageComponent } from '../components/message/message.component';
 import { SubscriptionComponent } from '../components/subscription/subscription.component'
@@ -10,8 +10,11 @@ export class AppService {
   // scripts
   loadAPI: Promise<any>;
 
-  constructor(private db: AngularFireDatabase, private _dialog: MdDialog) {}
-  public onClickAddScript(val) {
+  constructor(
+    //private db: AngularFireDatabase, 
+    private _dialog: MdDialog) {}
+
+    public onClickAddScript(val) {
         if(val === 'news') {
              this.loadAPI = new Promise((resolve) => {
              this.loadScript('assets/fetchnews.js');
@@ -22,8 +25,8 @@ export class AppService {
              this.loadScript('assets/map.js');
             });
         }
-    
     }
+
     public loadScript(url) {
         console.log('preparing to load...');
         let node = document.createElement('script');
@@ -35,11 +38,11 @@ export class AppService {
     }
 
     // dialogs 
-    openMessage() {
+    public openMessage() {
       const dialogRef = this._dialog.open(MessageComponent);
     }
 
-    openSubscription() {
+     public openSubscription() {
       const dialogRef2 = this._dialog.open(SubscriptionComponent);
     }
 
