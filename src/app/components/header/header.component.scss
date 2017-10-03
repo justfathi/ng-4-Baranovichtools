@@ -1,0 +1,67 @@
+.header-title {
+  min-height: 80px; 
+  width: 100%; 
+  display: flex;
+  flex-flow: wrap column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  background: transparent; 
+  line-height:1.6; 
+  color: #fff;
+ }
+
+
+.is-active {
+  background-color: red;
+}
+
+.fa {
+  font-size: 20px;
+}
+
+/* message */
+::ng-deep snack-bar-container.custom-class {
+  background:  #323941;
+}
+
+::ng-deep .custom-class .mat-simple-snackbar {
+  color: #fff;
+}
+
+::ng-deep  .mat-simple-snackbar-action {
+  color: red;
+}
+
+@media (min-width: 1600px) {
+  .hide-small {
+   display: flex;
+   justify-content: center;
+   width: 100%;
+  }
+}
+
+@media (max-width: 1000px) {
+  .hide-small {
+    display: none
+  }
+}
+
+@media (min-width: 1000px) {
+  .hide-large {
+    display: none
+  }
+}
+
+@media (max-width: 400px) {
+  .menu-label {
+  	display: none
+  }
+}
+
+.custom-logo {
+  filter: saturate(3);
+}
+
+
+

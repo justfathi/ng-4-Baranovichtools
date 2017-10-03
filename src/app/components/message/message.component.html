@@ -1,0 +1,14 @@
+<p style='text-align: center'>Оставить сообщение</p>
+  <form class="form" [formGroup]="form" (ngSubmit)="onSubmit()">
+    <md-form-field class="full-width">
+      <input mdInput placeholder="Имя" formControlName="name">
+    </md-form-field>
+    <md-form-field class="full-width">
+      <input mdInput placeholder="Почта" formControlName="email">
+    </md-form-field>
+    <md-form-field class="full-width">
+      <input mdInput  placeholder="Сообщение" formControlName="message">
+    </md-form-field>
+    <button md-button type="submit" [disabled]="form.invalid">Послать</button>
+  </form>
+

@@ -1,0 +1,28 @@
+.adress {
+  margin:0 auto;
+  padding: 20px;
+  height: 100px;
+  display: flex;
+  flex-flow: wrap row;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+ }
+
+ .dialogs {
+ 	margin: 0 20px
+ }
+
+.message {
+ margin: 5px;
+ height: 50px;
+ background-color: rgb(255, 219, 77);
+ box-shadow: 1px 1px 1px #fff;
+ color: #000;
+}
+
+.fa {
+	font-size: 20px;
+	margin-left:10px;
+	color: red;
+}
