@@ -1,0 +1,14 @@
+<div class="container unicorn-dark-theme" id='admin-menu'>
+	<div>
+      <button md-button [mdMenuTriggerFor]="menuAdmin">
+      	 <md-icon>more_vert</md-icon>
+      	 <span class='menu-label'>Админ </span>
+       
+       
+      </button>
+      <md-menu #menuAdmin="mdMenu">
+        <a routerLink="/friends-edit" md-menu-item>Друзья</a>
+        <button  md-menu-item (click)='logOut()'>Выйти</button>
+      </md-menu>
+    </div>
+</div>

@@ -4,6 +4,7 @@ import { Injectable} from '@angular/core';
 import { MdDialog } from '@angular/material';
 import { MessageComponent } from '../components/message/message.component';
 import { SubscriptionComponent } from '../components/subscription/subscription.component'
+import { LoginComponent } from '../components/login/login.component';
 
 @Injectable()
 export class AppService {
@@ -42,8 +43,12 @@ export class AppService {
       const dialogRef = this._dialog.open(MessageComponent);
     }
 
-     public openSubscription() {
+    public openSubscription() {
       const dialogRef2 = this._dialog.open(SubscriptionComponent);
+    }
+
+    public openLogin(){
+       const dialogRef3 = this._dialog.open(LoginComponent)
     }
 
 }

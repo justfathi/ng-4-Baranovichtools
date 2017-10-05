@@ -1,4 +1,5 @@
 import { Component,  Input } from '@angular/core';
+import { AppService } from '../../services/app.service'
 
 @Component({
   selector: 'app-header',
@@ -6,5 +7,9 @@ import { Component,  Input } from '@angular/core';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent {
-  constructor() {}
+ constructor(private service: AppService) {}
+
+ openLogin(){
+  	this.service.openLogin()
+  }
 }

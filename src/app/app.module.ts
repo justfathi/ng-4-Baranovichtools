@@ -19,10 +19,15 @@ import { routing, appRoutingProviders } from './app.routes';
 
 // providers
 import { AppService } from './services/app.service';
+import { AuthService } from './services/auth.service';
 
 //firebase
-//import { AngularFireModule } from 'angularfire2';
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireAuthModule } from 'angularfire2/auth';
 //import { AngularFireDatabaseModule } from 'angularfire2/database';
+
+//guard
+import { AuthGuard} from './guard/auth.guard';
 
 // enviroment 
 import { environment } from '../environments/environment';
@@ -41,6 +46,9 @@ import { TableBasicComponent } from './components/table-basic/table-basic.compon
 import { MessageComponent } from './components/message/message.component';
 import { SubscriptionComponent } from './components/subscription/subscription.component';
 import { MeetingsComponent } from './components/meetings/meetings.component';
+import { AdminMenuComponent } from './components/admin-menu/admin-menu.component';
+import { LoginComponent } from './components/login/login.component';
+import { FriendsEditComponent } from './components/pages-edit/friends-edit/friends-edit.component';
 
 @NgModule({
   declarations: [
@@ -56,7 +64,10 @@ import { MeetingsComponent } from './components/meetings/meetings.component';
     TableBasicComponent,
     MessageComponent,
     SubscriptionComponent,
-    MeetingsComponent
+    MeetingsComponent,
+    AdminMenuComponent,
+    LoginComponent,
+    FriendsEditComponent
   ],
   imports: [
     BrowserModule,
@@ -65,7 +76,8 @@ import { MeetingsComponent } from './components/meetings/meetings.component';
     HttpModule,
     HttpClientModule,
     ReactiveFormsModule,
-    // AngularFireModule.initializeApp(environment.firebase),
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireAuthModule,
     // AngularFireDatabaseModule, 
     MdMenuModule, MdDialogModule,
     MdButtonModule, MdCardModule,  
@@ -77,7 +89,7 @@ import { MeetingsComponent } from './components/meetings/meetings.component';
     MessageComponent, 
     SubscriptionComponent 
   ],
-  providers: [AppService],
+  providers: [AppService, AuthService, AuthGuard ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

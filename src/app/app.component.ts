@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { MdSnackBar, MdSnackBarConfig } from '@angular/material';
+import { AuthService } from './services/auth.service';  
+
 
 @Component({
   selector: 'app-root',
@@ -8,9 +10,22 @@ import { MdSnackBar, MdSnackBarConfig } from '@angular/material';
 })
 
 export class AppComponent {
-	constructor(private snackBar:MdSnackBar){
-		this.openSnackBar('Добро пожаловать в библиотеку инструментов', '')
-	}
+  admin: boolean;
+  subscribeAdmin;
+    
+
+	constructor(private snackBar:MdSnackBar, private auth:AuthService ) {
+
+    // snackbar
+		this.openSnackBar('Добро пожаловать в библиотеку инструментов', '');
+
+    // check admin auth
+    this.subscribeAdmin = this.auth.subscribeAdmin.subscribe((value) => {
+        this.admin = this.auth.adminAuth;
+    });
+  }
+
+  // open snackbar
 	openSnackBar(message: string, action?: string) {
     let config = new MdSnackBarConfig();
     config.extraClasses = ['custom-class'];
