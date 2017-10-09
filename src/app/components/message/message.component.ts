@@ -13,7 +13,7 @@ export class MessageComponent {
   sent: boolean;
 
   constructor(private fb: FormBuilder, private http: HttpClient) {
-  	this.createForm();
+    this.createForm();
     this.sent = false;
   }
   
@@ -52,6 +52,3 @@ export class MessageComponent {
     this.form.reset();
   }
 }
-
-
-

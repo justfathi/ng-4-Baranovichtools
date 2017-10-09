@@ -1,14 +1,14 @@
-<div class="container unicorn-dark-theme" id='admin-menu'>
-	<div>
+<div class="container unicorn-dark-theme" id='admin-menu' style='position'>
+	<div class='admin-wrapper'>
       <button md-button [mdMenuTriggerFor]="menuAdmin">
       	 <md-icon>more_vert</md-icon>
       	 <span class='menu-label'>Админ </span>
-       
-       
       </button>
-      <md-menu #menuAdmin="mdMenu">
-        <a routerLink="/friends-edit" md-menu-item>Друзья</a>
-        <button  md-menu-item (click)='logOut()'>Выйти</button>
+      <md-menu #menuAdmin="mdMenu" class='menu'>
+        <span class='switch'>лишнее<mat-slide-toggle (click)='switchBanner()' class='switch-button'></mat-slide-toggle></span>
+        <a routerLink="/upload-edit" md-menu-item>загрузки</a>
+        <a routerLink="/friends-edit" md-menu-item>редакт.друзья</a>
+        <button  md-menu-item (click)='logOut()'>выйти</button>
       </md-menu>
     </div>
 </div>

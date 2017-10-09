@@ -1,0 +1,22 @@
+.upload {
+	background-color: rgb(255, 219, 77);
+  	color: #000;
+}
+
+.above {
+	position: absolute;
+	z-index: 99;
+}
+
+.under {
+	padding: 10px 0 10px 52px;
+}
+
+label {
+	cursor: pointer;
+}
+
+label:focus, input:focus {
+	outline: none;
+	border: 0;
+}

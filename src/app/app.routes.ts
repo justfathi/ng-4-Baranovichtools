@@ -10,19 +10,20 @@ import { LoginComponent } from './components/login/login.component';
 //admin
 import { AuthGuard } from './guard/auth.guard';
 import { FriendsEditComponent } from './components/pages-edit/friends-edit/friends-edit.component';
-
+import { UploadEditComponent } from './components/pages-edit/upload-edit/upload-edit.component';
 
 export const routes: Routes = [
   { path: '',   redirectTo: '/home',   pathMatch : 'full' },
-  { path: 'home',   	  component: HomeComponent },
-  { path: 'login', 		  component: LoginComponent },
-  { path: 'news',   	  component: NewsComponent },
+  { path: 'home',   	    component: HomeComponent },
+  { path: 'login', 		    component: LoginComponent },
+  { path: 'news',   	    component: NewsComponent },
   { path: 'membership',   component: MembershipComponent },
-  { path: 'friends', 	  component: FriendsComponent },
-  { path: 'help',   	  component: HelpComponent },
+  { path: 'friends', 	    component: FriendsComponent },
+  { path: 'help',   	    component: HelpComponent },
   { path: 'history',      component: HistoryComponent },
   // admin pages
-  { path: 'friends-edit', component: FriendsEditComponent, canActivate: [AuthGuard]}
+  { path: 'upload-edit',  component: UploadEditComponent }, // canActivate: [AuthGuard]
+  { path: 'friends-edit', component: FriendsEditComponent } // canActivate: [AuthGuard]
  ];
 
 export const appRoutingProviders: any[] = [

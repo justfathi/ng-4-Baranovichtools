@@ -11,7 +11,8 @@ import {
    MdMenuModule, MdToolbarModule, 
    MdIconModule, MdTableModule,
    MdInputModule, MdTooltipModule,
-   MdDialogModule, MdSnackBarModule
+   MdDialogModule, MdSnackBarModule,
+   MatSlideToggleModule, MatProgressBarModule
 } from '@angular/material';
 
 // routing
@@ -20,11 +21,13 @@ import { routing, appRoutingProviders } from './app.routes';
 // providers
 import { AppService } from './services/app.service';
 import { AuthService } from './services/auth.service';
+import { ConfigService } from './services/config.service';
+import { UploadsService } from './services/uploads.service';
 
 //firebase
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireAuthModule } from 'angularfire2/auth';
-//import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
 
 //guard
 import { AuthGuard} from './guard/auth.guard';
@@ -49,6 +52,8 @@ import { MeetingsComponent } from './components/meetings/meetings.component';
 import { AdminMenuComponent } from './components/admin-menu/admin-menu.component';
 import { LoginComponent } from './components/login/login.component';
 import { FriendsEditComponent } from './components/pages-edit/friends-edit/friends-edit.component';
+import { UploadFormComponent } from './components/upload-form/upload-form.component';
+import { UploadEditComponent } from './components/pages-edit/upload-edit/upload-edit.component';
 
 @NgModule({
   declarations: [
@@ -67,7 +72,9 @@ import { FriendsEditComponent } from './components/pages-edit/friends-edit/frien
     MeetingsComponent,
     AdminMenuComponent,
     LoginComponent,
-    FriendsEditComponent
+    FriendsEditComponent,
+    UploadEditComponent,
+    UploadFormComponent,
   ],
   imports: [
     BrowserModule,
@@ -78,18 +85,19 @@ import { FriendsEditComponent } from './components/pages-edit/friends-edit/frien
     ReactiveFormsModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
-    // AngularFireDatabaseModule, 
+    AngularFireDatabaseModule, 
     MdMenuModule, MdDialogModule,
     MdButtonModule, MdCardModule,  
     MdToolbarModule, MdIconModule,
     MdTableModule, MdInputModule,
-    MdTooltipModule, MdSnackBarModule
+    MdTooltipModule, MdSnackBarModule,
+    MatSlideToggleModule, MatProgressBarModule
   ],
   entryComponents: [ 
     MessageComponent, 
     SubscriptionComponent 
   ],
-  providers: [AppService, AuthService, AuthGuard ],
+  providers: [AppService, AuthService, AuthGuard, ConfigService, UploadsService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

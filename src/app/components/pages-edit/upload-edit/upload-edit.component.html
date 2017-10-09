@@ -1,0 +1,18 @@
+<section>
+  <h2>ЗАГРУЗКИ</h2>
+    <div class="container mat-elevation-z3">
+      <div id="upl-img">
+        <div class="gallery-grids">
+          <div class="gallery-top" *ngFor="let img of images | async">
+            <div class="effect-bubba">
+            <img src="{{img.url}}" alt="" class="img-responsive" >
+            <div class='figcaption'>
+              <h4>{{img.name}}</h4>
+            </div>
+           </div>
+          </div>
+        </div>
+      </div>
+      <app-upload-form></app-upload-form>
+    </div>
+</section>

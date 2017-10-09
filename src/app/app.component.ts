@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { MdSnackBar, MdSnackBarConfig } from '@angular/material';
-import { AuthService } from './services/auth.service';  
+import { AuthService } from './services/auth.service'; 
 
 
 @Component({
@@ -11,16 +11,17 @@ import { AuthService } from './services/auth.service';
 
 export class AppComponent {
   admin: boolean;
+  
+  //subscribe
   subscribeAdmin;
-    
-
-	constructor(private snackBar:MdSnackBar, private auth:AuthService ) {
+ 
+	constructor(private snackBar:MdSnackBar, private auth:AuthService) {
 
     // snackbar
 		this.openSnackBar('Добро пожаловать в библиотеку инструментов', '');
 
     // check admin auth
-    this.subscribeAdmin = this.auth.subscribeAdmin.subscribe((value) => {
+    this.subscribeAdmin = this.auth.subscribeAdmin.subscribe(() => {
         this.admin = this.auth.adminAuth;
     });
   }

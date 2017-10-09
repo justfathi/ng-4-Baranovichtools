@@ -5,13 +5,28 @@
 
 #admin-menu {
 	position: absolute;
-	top: 60px; 
 	right: 0;
 	z-index: 999;
 	color: #fff;
-	width: 100px
+}
+
+.menu {
+	padding-top: 10px;
 }
 
 .md-icon-button {
 	width: 50px;
+}
+
+.mat-button {
+	padding-left: 10px;
+}
+
+.switch {
+	padding: 0 20px 12px 18px;
+	height: 30px;
+}
+
+.switch-button {
+	padding-left:10px;
 }
