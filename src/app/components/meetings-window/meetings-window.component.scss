@@ -1,0 +1,47 @@
+.meetings-window {
+  background-color: #fff;
+  left: 0;
+  bottom: 0;	
+  position: absolute;	
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  max-height: 305px;
+  padding: 0;
+  overflow: hidden;
+}
+
+.btn {
+  width: 100%;
+  min-height: 39px;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  display: flex;
+  border-bottom: 0.7px solid rgba(0, 0, 0, 0.12);
+  min-height: 37px;
+  line-height: 37px;
+  padding: 0 10px;
+}
+
+.window-date {
+  flex-basis: 50%;
+}
+
+.window-title {
+ flex-basis: 50%;
+}
+
+@media (max-width: 600px){
+  .meetings-window {
+    position: relative;
+    width: 100%;
+    margin-bottom: .3px;
+  }
+}

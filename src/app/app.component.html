@@ -3,7 +3,7 @@
   <div class="container" id='back-cont'>
     <div class="back"></div>
   </div>
-  <app-admin-menu ></app-admin-menu> <!-- *ngIf='admin' -->
+  <app-admin-menu *ngIf='admin'></app-admin-menu> <!-- *ngIf='admin' -->
   <router-outlet></router-outlet>
   <app-footer id='footer'></app-footer>
 </div>

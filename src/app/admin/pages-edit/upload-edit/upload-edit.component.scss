@@ -1,0 +1,48 @@
+.upl-container {
+	display: flex; 
+	flex-flow: wrap row; 
+	justify-content: center
+}
+
+.upl-form-container {
+	max-width: 300px; 
+	margin: 0 auto
+}
+
+.upl-h4 {
+	margin-bottom: 5px;
+	opacity: 0.5;
+}
+.upl-btn {
+	background-color: transparent;
+	border: none;
+	cursor: pointer;
+	width: 170px;
+	height: 100px;
+}
+.upl-btn:focus, .upl-btn:active {
+	border: 0;
+	outline: none;
+}
+
+.upl-card {
+	width: 200px;
+	height: 150px;
+	margin: 10px;
+	padding: 5px;
+}
+
+.upl-image {
+	margin: 0 15px;
+}
+
+
+
+.title-align {
+	max-width: 150px;
+	margin: 0 auto;
+}
+.title-align {
+	padding-left: 20px;
+}
+

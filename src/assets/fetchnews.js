@@ -1,1 +1,0 @@
- twitterFetcher.fetch(configProfile);

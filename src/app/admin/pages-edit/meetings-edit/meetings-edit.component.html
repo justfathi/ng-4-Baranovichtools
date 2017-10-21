@@ -1,0 +1,34 @@
+<section>
+  <h2>РЕДАКТИРОВАТЬ СОБЫТИЯ</h2>
+  <div class="container mat-elevation-z3 friends-edit">
+    <div class='exp-panel-wrapper'>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+          </mat-panel-title>
+          <mat-panel-description>
+            Добавить событие
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <meeting-edit-form></meeting-edit-form>
+      </mat-expansion-panel>
+    </div>
+    <!--  редактировать -->
+    <div *ngFor='let meeting of meetings | async' class='edit-item'>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            {{meeting.title}}
+          </mat-panel-title>
+          <mat-panel-description>
+            Редакт / Приоритет <span>&nbsp;{{meeting.order}}</span>
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <meeting-edit-form [meeting]='meeting'></meeting-edit-form>
+        <div class='btn-wrapper'>
+          <button (click)='delete(meeting.key)' md-button class='btn'>Удалить событие</button>
+        </div>
+      </mat-expansion-panel>
+    </div>
+  </div>
+</section>

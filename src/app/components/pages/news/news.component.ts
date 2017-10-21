@@ -1,16 +1,20 @@
-import { Component, OnInit } from '@angular/core';
-import { AppService } from '../../../services/app.service';
+import { Component } from '@angular/core';
+import { AngularFireDatabase } from 'angularfire2/database';
+import { Observable } from 'rxjs/observable';
+
 
 @Component({
   selector: 'app-news',
   templateUrl: './news.component.html',
   styleUrls: ['./news.component.scss']
 })
-export class NewsComponent implements OnInit {
+export class NewsComponent {
+  showProgress = true;
+  dateText = 'Дата публикации:';
+  news: Observable<any[]>
 
-  constructor(private service: AppService) {}
-
- ngOnInit() {
-  	this.service.onClickAddScript('news');
-   }
+  constructor(private db: AngularFireDatabase) {
+  	this.news = this.db.list('news', ref => ref.orderByChild('order')).valueChanges();
+  	this.news.subscribe(()=> this.showProgress = false)
+  }
 }

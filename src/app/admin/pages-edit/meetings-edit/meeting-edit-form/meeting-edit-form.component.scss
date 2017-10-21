@@ -1,0 +1,45 @@
+.form {
+  display: flex;
+  flex-flow: wrap row;
+  justify-content: center;
+}
+.card-right {
+  flex-basis: 30%;
+  margin: 20px;
+  overflow: hidden!important;
+}
+
+.card-left {
+  flex-basis: 60%;
+  padding: 20px;
+}
+
+.card-right-img {
+  max-width: 250px; 
+  margin:0 auto; 
+  padding-left: 50px;
+}
+
+.no-image {
+  max-width: 250px;
+}
+
+.new-image {
+  padding-bottom: 0;
+}
+
+.actions-wrapper {
+   width:100%;
+}
+
+.btn {
+  margin-bottom: 5px;
+  width: 100%;
+}
+
+@media (max-width: 970px) {
+  .card-right, .card-left {
+    flex-basis: 100%;
+  } 
+}
+

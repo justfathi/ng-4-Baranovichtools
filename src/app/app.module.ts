@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -12,17 +13,15 @@ import {
    MdIconModule, MdTableModule,
    MdInputModule, MdTooltipModule,
    MdDialogModule, MdSnackBarModule,
-   MatSlideToggleModule, MatProgressBarModule
+   MdFormFieldModule,
 } from '@angular/material';
 
 // routing
 import { routing, appRoutingProviders } from './app.routes';
 
 // providers
-import { AppService } from './services/app.service';
-import { AuthService } from './services/auth.service';
-import { ConfigService } from './services/config.service';
-import { UploadsService } from './services/uploads.service';
+import { AppService } from './main-services/app.service';
+import { AuthService } from './main-services/auth.service';
 
 //firebase
 import { AngularFireModule } from 'angularfire2';
@@ -38,49 +37,40 @@ import { environment } from '../environments/environment';
 // components
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/pages/home/home.component';
-import { FriendsComponent } from './components/pages/friends/friends.component';
-import { MembershipComponent } from './components/pages/membership/membership.component';
-import { HelpComponent } from './components/pages/help/help.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
-import { NewsComponent } from './components/pages/news/news.component';
-import { HistoryComponent } from './components/pages/history/history.component';
 import { TableBasicComponent } from './components/table-basic/table-basic.component';
 import { MessageComponent } from './components/message/message.component';
 import { SubscriptionComponent } from './components/subscription/subscription.component';
-import { MeetingsComponent } from './components/meetings/meetings.component';
-import { AdminMenuComponent } from './components/admin-menu/admin-menu.component';
+import { MeetingsWindowComponent } from './components/meetings-window/meetings-window.component';
 import { LoginComponent } from './components/login/login.component';
-import { FriendsEditComponent } from './components/pages-edit/friends-edit/friends-edit.component';
-import { UploadFormComponent } from './components/upload-form/upload-form.component';
-import { UploadEditComponent } from './components/pages-edit/upload-edit/upload-edit.component';
+// admin
+import { AdminMenuComponent } from './admin/admin-menu/admin-menu.component';
+import { ImgPickerComponent } from './admin/img-picker/img-picker.component';
+import { MapsAllComponent } from './components/maps-all/maps-all.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    FriendsComponent,
-    MembershipComponent,
-    HistoryComponent,
-    HelpComponent,
     HeaderComponent,
     FooterComponent,
-    NewsComponent,
     TableBasicComponent,
     MessageComponent,
     SubscriptionComponent,
-    MeetingsComponent,
     AdminMenuComponent,
     LoginComponent,
-    FriendsEditComponent,
-    UploadEditComponent,
-    UploadFormComponent,
+    ImgPickerComponent,
+    MeetingsWindowComponent,
+    MapsAllComponent,
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     routing,
     HttpModule,
+    FormsModule,
     HttpClientModule,
     ReactiveFormsModule,
     AngularFireModule.initializeApp(environment.firebase),
@@ -91,13 +81,14 @@ import { UploadEditComponent } from './components/pages-edit/upload-edit/upload-
     MdToolbarModule, MdIconModule,
     MdTableModule, MdInputModule,
     MdTooltipModule, MdSnackBarModule,
-    MatSlideToggleModule, MatProgressBarModule
+    MdFormFieldModule,
   ],
   entryComponents: [ 
     MessageComponent, 
-    SubscriptionComponent 
+    SubscriptionComponent,
+    ImgPickerComponent 
   ],
-  providers: [AppService, AuthService, AuthGuard, ConfigService, UploadsService ],
+  providers: [AppService, AuthService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

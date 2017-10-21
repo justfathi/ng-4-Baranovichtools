@@ -1,6 +1,14 @@
 <section>
   <h2>НОВОСТИ</h2>
-  <div class="container mat-elevation-z3">
-    <div id="tweeter-news"></div>
+  <div *ngIf='showProgress' class='unicorn-dark-theme progressWrapper'>
+    <md-progress-bar mode="indeterminate" color='accent' class='mat-elevation-z1'>
+    </md-progress-bar>
+  </div>
+  <div class="container">
+    <div class='wrapper' *ngIf='!showProgress'>
+      <div *ngFor='let article of news | async'>
+        <app-card-item [item]='article' [dateText]="dateText"></app-card-item>
+      </div>
+    </div>
   </div>
 </section>

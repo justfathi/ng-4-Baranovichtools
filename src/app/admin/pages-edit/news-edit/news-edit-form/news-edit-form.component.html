@@ -1,0 +1,46 @@
+<form class="form" [formGroup]="form">
+  <div class='card-left'>
+    <md-form-field class="full-width">
+        <input mdInput type='number' placeholder="Приоритет" [(ngModel)]='order' formControlName="order" requred minlength="1">
+    </md-form-field>
+    <md-form-field class="full-width" hidden>
+      <input mdInput placeholder="Аватар" [(ngModel)]='avatar' formControlName="avatar" requred minlength="3">
+    </md-form-field>
+    <md-form-field class="full-width">
+      <input mdInput placeholder="Заголовок" [(ngModel)]='title' formControlName="title" requred minlength="3">
+    </md-form-field>
+    <md-form-field class="full-width">
+      <input mdInput placeholder="Подзаголовок" [(ngModel)]='subtitle' formControlName="subtitle" requred minlength="3">
+    </md-form-field>
+    <md-form-field class="full-width">
+      <textarea mdInput placeholder="Текст" rows="10" cols='30' [(ngModel)]='text' formControlName="text" requred minlength="100"> </textarea>
+    </md-form-field>
+    <md-input-container>
+      <input mdInput [mdDatepicker]="picker" [(ngModel)]='date' formControlName="date" requred minlength="3" placeholder="Выберите дату">
+      <md-datepicker-toggle mdSuffix [for]="picker"></md-datepicker-toggle>
+      <md-datepicker #picker></md-datepicker>
+    </md-input-container>
+    <md-datepicker #picker></md-datepicker>
+    <md-form-field class="full-width" hidden>
+      <input mdInput placeholder="Имя" [(ngModel)]='name' formControlName="name" requred minlength="3">
+    </md-form-field>
+    <md-form-field class="full-width" hidden>
+      <input mdInput placeholder="Ссылка" [(ngModel)]='url' formControlName="url" requred minlength="3">
+    </md-form-field>
+  </div>
+  <div class='card-right'>
+    <div class='card-right-img'>
+      <p>Картинка : {{name}}</p>
+      <img md-card-image *ngIf='url == undefined' src="assets/img/no_image.jpg" class='no-image' alt="">
+    </div>
+    <md-card class='new-image'>
+      <img md-card-image *ngIf='url !== undefined' src="{{url}}" alt="{{name}}">
+    </md-card>
+    <div class='actions-wrapper'>
+      <button md-button class='btn' (click)='openAvatarPicker()'>Добавить аватар</button>
+      <button md-button class='btn' (click)='openImgPicker()'>Добавить картинку</button>
+      <button md-button class='btn' type="submit" [disabled]="form.invalid" (click)='send()'>Сохранить</button>
+    </div>
+  </div>
+</form>
+

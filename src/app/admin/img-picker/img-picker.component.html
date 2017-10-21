@@ -1,0 +1,8 @@
+<div class='img-picker'>
+  <md-dialog-content>
+    <span *ngFor='let img of data | async'>
+			<button md-button [md-dialog-close]="img" class='img-button'><img src="{{img.url}}" alt=""></button>
+		</span>
+    </md-dialog-content>
+</div>
+<button md-button (click)='onNoClick()'>Закрыть </button>

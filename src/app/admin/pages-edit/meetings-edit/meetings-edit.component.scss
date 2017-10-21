@@ -1,0 +1,27 @@
+.container {
+	background-color: #eee;
+}
+
+.edit-item {
+	padding-bottom: 20px;
+}
+
+.mat-card {
+	background-color: #eee;
+}
+
+.exp-panel-wrapper {
+	padding-bottom: 20px;
+}
+
+.btn-wrapper { 
+	overflow: hidden;
+	margin: 0 20px; 
+}
+.btn {
+	width: 100%;
+}
+
+@media (max-width: 970px) {
+	.btn-wrapper { margin-top: -20px; }
+}

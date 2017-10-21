@@ -13,7 +13,7 @@
             pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,6})+$">
     </md-form-field>
     <md-form-field class="full-width">
-      <input mdInput  placeholder="Сообщение" formControlName="message" requred  minlength="7">
+      <textarea mdInput  placeholder="Сообщение" rows="3" formControlName="message" requred  minlength="7"></textarea>
     </md-form-field>
     <button md-button type="submit" [disabled]="form.invalid">Послать</button>
   </form>

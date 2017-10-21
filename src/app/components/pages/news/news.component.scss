@@ -1,2 +1,11 @@
+.wrapper {
+	display: flex;
+	flex-flow: wrap column;
+	justify-content: flex-start;
+	align-items: stratch;
+}
 
+@media (max-width: 600px) {
+	.wrapper { justify-content: center;}
+}
 

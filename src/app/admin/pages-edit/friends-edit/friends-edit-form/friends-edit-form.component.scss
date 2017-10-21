@@ -1,0 +1,29 @@
+.edit-container {
+	max-width: 600px;
+	min-height: 200px;
+	margin: 0 auto; 
+}
+.btn {
+	margin: 0 0 5px;
+	width: 100%;
+}
+
+.edit-form {
+	max-width: 300px; 
+	margin: 0 auto; 
+	float: right;
+}
+
+.align-sm {
+	padding-top: 10px;
+	padding-bottom: 20px;
+}
+
+@media (max-width: 800px) {
+	.img-wrapper {display:flex; justify-content: center}
+	.align-sm { padding-bottom: 0};
+	.img-wrapper>img {height: 100px}
+	.edit-container {max-width: 300px; }
+	.edit-form { float: none}
+}
+

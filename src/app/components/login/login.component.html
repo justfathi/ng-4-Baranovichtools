@@ -2,11 +2,11 @@
 <p style='text-align: center' *ngIf='sent'>Добро пожаловать в админку</p>
 <form class="form" [formGroup]="form" (ngSubmit)="onSubmit()">
   <md-form-field class="full-width">
-    <input mdInput placeholder="Логин" [(ngModel)]="login" formControlName="email" requred  minlength="3" 
+    <input mdInput placeholder="Логин" formControlName="email" requred  minlength="3" 
            pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,6})+$">
   </md-form-field>
    <md-form-field class="full-width">
-    <input mdInput placeholder="Пароль" [(ngModel)]="pass" type="password" formControlName="password" requred  minlength="3">
+    <input mdInput placeholder="Пароль" type="password" formControlName="password" requred  minlength="3">
   </md-form-field>
    <button md-button type="submit" [disabled]="form.invalid">Войти</button>
 </form>

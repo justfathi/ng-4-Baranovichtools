@@ -1,7 +1,7 @@
 <div class='unicorn-dark-theme' style='background-color: #323941'>
   <md-toolbar color="primary" class='mat-elevation-z6'>
     <a (click)='openLogin()' class='logo-href'>
-    <img width="72.5" height="50" src="http://baranovichytools.ru/wp-content/uploads/2017/08/cropped-Biblioteka_instrumentov_krv-1.png" class="custom-logo" alt="Библиотека инструментов" itemprop="logo">
+    <img width="72.5" height="50" src="http://oky.16mb.com/MYpublic/BTL/assets/img/BTLlogo.png" class="custom-logo" alt="Библиотека инструментов" itemprop="logo">
     </a>
     <div class='hide-large'>
       <button md-icon-button [mdMenuTriggerFor]="menu">
@@ -11,7 +11,7 @@
       <md-menu #menu="mdMenu">
         <a routerLink="/home" md-menu-item>главная</a>
         <a routerLink="/news" md-menu-item>новости</a>
-        <a target='_blank' href='https://toolslibrarybaranovichy.myturn.com/library/inventory/browse' md-menu-item>склад / вход</a>
+        <a target='_blank'  rel="noopener" href='https://toolslibrarybaranovichy.myturn.com/library/inventory/browse' md-menu-item>склад / вход</a>
         <a routerLink="/membership" md-menu-item>членство</a>
         <a routerLink="/history" md-menu-item>наша история</a>
         <a routerLink="/friends" md-menu-item>друзья</a>
@@ -25,29 +25,29 @@
         routerLinkActive="is-active">
         НОВОСТИ
       </a>
-      <a target='_blank' href='https://toolslibrarybaranovichy.myturn.com/library/inventory/browse' md-button>СКЛАД / ВХОД</a>
+      <a target='_blank'  rel="noopener" href='https://toolslibrarybaranovichy.myturn.com/library/inventory/browse' md-button>СКЛАД / ВХОД</a>
       <a routerLink="/membership" md-button routerLinkActive="is-active">ЧЛЕНСТВО</a>
       <a routerLink="/history" md-button routerLinkActive="is-active">НАША ИСТОРИЯ</a>
       <a routerLink="/friends" md-button routerLinkActive="is-active">ДРУЗЬЯ</a>
       <a routerLink="/help" md-button routerLinkActive="is-active">КАК НАМ ПОМОЧЬ</a>
     </div>
     <span class='separator'></span>
-    <a href='https://vk.com/toolslibrary' md-icon-button>
+    <a href='https://vk.com/toolslibrary' target='_blank'  rel="noopener" md-icon-button>
         <span  mdTooltip='В Контакте'>
           <i class="fa fa-vk" aria-hidden="true"></i>
         </span>
     </a>
-    <a href='https://facebook.com/groups/toolslibrarybaranovichy' md-icon-button>
+    <a href='https://facebook.com/groups/toolslibrarybaranovichy' target='_blank'  rel="noopener" md-icon-button>
       <span  mdTooltip='Фэйсбук'>
          <i class="fa fa-facebook" aria-hidden="true"></i>
       </span>
     </a>
-    <a href='https://twitter.com/TLBaranovichy' md-icon-button>
+    <a href='https://twitter.com/TLBaranovichy' target='_blank'  rel="noopener" md-icon-button>
        <span  mdTooltip='Твиттер'>
       <i class="fa fa-twitter" aria-hidden="true"></i>
     </span>
     </a>
-    <a href='https://www.instagram.com/toolslibrary/' md-icon-button>
+    <a href='https://www.instagram.com/toolslibrary/' target='_blank'  rel="noopener" md-icon-button>
        <span  mdTooltip='Инстаграм'>
       <i class="fa fa-instagram" aria-hidden="true"></i>
     </span>

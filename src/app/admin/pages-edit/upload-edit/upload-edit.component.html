@@ -1,0 +1,26 @@
+<section>
+  <h2>ЗАГРУЗКИ</h2>
+  <div class="container mat-elevation-z3">
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-description>
+          <span class='title-align'>УДАЛЕНИЕ ФАЙЛОВ</span>
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <div class='upl-container'>
+        <md-card *ngFor="let img of images | async" class='upl-card'>
+          <h4 class='upl-h4'>{{img.name}}</h4>
+          <button class='upl-btn' (click)='deleteFile(img)'>
+            <img src="{{img.url}}" width='170' height='100' class='upl-image'>
+          </button>
+        </md-card>
+      </div>
+    </mat-expansion-panel>
+    <md-card>
+      <div class='upl-form-container'>
+        <p style='text-align: center'>Загрузить файл</p>
+        <app-upload-form></app-upload-form>
+      </div>
+    </md-card>
+  </div>
+</section>

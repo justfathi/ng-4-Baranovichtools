@@ -1,5 +1,5 @@
 import { Component,  Input } from '@angular/core';
-import { AppService } from '../../services/app.service'
+import { AppService } from '../../main-services/app.service';
 
 @Component({
   selector: 'app-header',
@@ -9,7 +9,7 @@ import { AppService } from '../../services/app.service'
 export class HeaderComponent {
  constructor(private service: AppService) {}
 
- openLogin(){
-  	this.service.openLogin()
+ openLogin() {
+   this.service.openLogin()
   }
 }

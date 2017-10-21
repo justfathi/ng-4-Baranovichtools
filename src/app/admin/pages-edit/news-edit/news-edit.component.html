@@ -1,0 +1,37 @@
+<section>
+  <h2>РЕДАКТИРОВАТЬ НОВОСТИ</h2>
+  <div class="container mat-elevation-z3 friends-edit">
+  
+   <div class='exp-panel-wrapper'>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+          </mat-panel-title>
+          <mat-panel-description>
+            Добавить новость
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <news-edit-form></news-edit-form>
+       </mat-expansion-panel>
+    </div>
+    <!--  редактировать -->
+   
+      <div *ngFor='let article of news | async' class='edit-item'>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              {{article.title}}
+            </mat-panel-title>
+            <mat-panel-description>
+              Редакт / Приоритет <span>&nbsp;{{article.order}}</span>
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+          <news-edit-form [article]='article'></news-edit-form>
+          <div class='btn-wrapper'>
+          	<button (click)='delete(article.key)' md-button class='btn'>Удалить новость</button>
+     	  </div>
+        </mat-expansion-panel>
+    </div>
+   </div>
+
+</section>

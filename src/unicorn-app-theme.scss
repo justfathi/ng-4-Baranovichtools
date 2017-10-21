@@ -22,7 +22,7 @@ $mat-custom: (
    50: #323941,
   //50: #333,
   100: #cfd8dc,
-  200: #b0bec5,
+  200: #ffdb4d,
   300: #90a4ae,
   400: #78909c,
   500: #607d8b,
@@ -53,7 +53,7 @@ $mat-custom: (
   )
 );
 $dark-primary: mat-palette($mat-custom, 800); //$mat-custom, 800
-$dark-accent:  mat-palette($mat-red, A200, A100, A400); //A200, A100, A400);
+$dark-accent:  mat-palette($mat-custom, 200, A100, A400); //A200, A100, A400);
 $dark-warn:    mat-palette($mat-red);
 $dark-theme:   mat-dark-theme($dark-primary, $dark-accent, $dark-warn);
 

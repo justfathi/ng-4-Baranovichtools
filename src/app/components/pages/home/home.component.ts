@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { AppService } from '../../../services/app.service';
+import { Component } from '@angular/core';
+import { AppService } from '../../../main-services/app.service';
 import { TableBasicComponent } from '../../table-basic/table-basic.component';
 
 @Component({
@@ -7,12 +7,9 @@ import { TableBasicComponent } from '../../table-basic/table-basic.component';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
-export class HomeComponent implements OnInit {
-  constructor(private service: AppService) { }
+export class HomeComponent {
+  constructor(private service: AppService) {}
 
-  ngOnInit() {
-  	this.service.onClickAddScript('map');
-  }
   openMessage(){
   	this.service.openMessage()
   }

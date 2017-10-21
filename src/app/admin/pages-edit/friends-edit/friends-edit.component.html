@@ -1,0 +1,38 @@
+<section>
+  <h2>РЕДАКТИРОВАТЬ ДРУЗЬЯ</h2>
+  <div class="container mat-elevation-z3 friends-edit">
+     
+   <div class='exp-panel-wrapper'>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+          </mat-panel-title>
+          <mat-panel-description>
+            Добавить нового друга
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <friends-edit-form></friends-edit-form>
+       </mat-expansion-panel>
+    </div>
+    <!--  редактировать -->
+   
+      <div *ngFor='let friend of friends | async' class='edit-item'>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title >
+              {{friend.title}}
+            </mat-panel-title>
+            <mat-panel-description>
+              Редакт / Приоритет&nbsp;{{friend.order}} 
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+          <friends-edit-form [friend]='friend'></friends-edit-form>
+          <div class='btn-wrapper'>
+          	<button (click)='delete(friend.key)' md-button class='btn'>Удалить</button>
+     	  </div>
+        </mat-expansion-panel>
+    </div>
+    
+  </div>
+
+</section>

@@ -1,0 +1,30 @@
+<div class='edit-container'>
+  <span class='img-wrapper'>
+  <img *ngIf='url == undefined' src="assets/img/no_image.jpg" style='max-width: 200px' alt="">
+  <img *ngIf='url !== undefined' src="{{url}}" alt="" style='max-width: 160px; padding:20px;'>
+  </span>
+  <div class='edit-form'>
+    <p>Картинка : {{name}}</p>
+    <form class="form" [formGroup]="form">
+      <md-form-field class="full-width">
+        <input mdInput type='number' placeholder="Приоритет" [(ngModel)]='order' formControlName="order" requred minlength="1">
+      </md-form-field>
+      <md-form-field class="full-width">
+        <input mdInput placeholder="Заголовок" [(ngModel)]='title' formControlName="title" requred minlength="3">
+      </md-form-field>
+      <md-form-field class="full-width">
+        <input mdInput placeholder="Cсылка на друга" [(ngModel)]='link' formControlName="link" requred minlength="3">
+      </md-form-field>
+      <md-form-field class="full-width" hidden>
+        <input mdInput placeholder="Имя" [(ngModel)]='name' formControlName="name" requred minlength="3">
+      </md-form-field>
+      <md-form-field class="full-width" hidden>
+        <input mdInput placeholder="Ссылка" [(ngModel)]='url' formControlName="url" requred minlength="3">
+      </md-form-field>
+      <div class='align-sm'>
+        <button md-button class='btn' (click)='openImgPicker()'>Добавить картинку</button>
+        <button md-button class='btn' type="submit" [disabled]="form.invalid" (click)='send()'>Сохранить</button>
+      </div>
+      </form>
+  </div>
+</div>

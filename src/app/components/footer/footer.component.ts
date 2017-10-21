@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AppService } from '../../services/app.service';
+import { AppService } from '../../main-services/app.service';
 
 @Component({
   selector: 'app-footer',
@@ -9,14 +9,12 @@ import { AppService } from '../../services/app.service';
 export class FooterComponent implements OnInit {
 
   constructor(private service: AppService) { }
-
   ngOnInit() {
   }
-
-  openMessage(){
-  	this.service.openMessage()
+  openMessage() {
+   this.service.openMessage()
   }
-  openSubscription(){
-  	this.service.openSubscription()
+  openSubscription() {
+   this.service.openSubscription()
   }
 }
