@@ -1,16 +1,16 @@
 <div *ngIf="currentUpload">
   <div style='max-width: 350px' *ngIf='currentUpload?.progress !== 100'>
-    <md-progress-bar mode="determinate" [value]='currentUpload?.progress'></md-progress-bar>
+    <mat-progress-bar mode="determinate" [value]='currentUpload?.progress'></mat-progress-bar>
   </div>
   <p>Имя: {{currentUpload?.name}}
     <br> Прогресс: {{currentUpload?.progress}}%
   </p>
 </div>
-<button type="button" md-button class='btn above' (click)="selectFile()"> выбрать картинку &nbsp;</button>
+<button type="button" mat-button class='btn above' (click)="selectFile()"> выбрать картинку &nbsp;</button>
 <label>
   <input type="file" class='under' #inputFile (change)="detectFiles($event)">
 </label>
-<button md-button class='btn' [disabled]="!selectedFiles" (click)="uploadSingle()">
+<button mat-button class='btn' [disabled]="!selectedFiles" (click)="uploadSingle()">
   загрузить картинку
 </button>
 

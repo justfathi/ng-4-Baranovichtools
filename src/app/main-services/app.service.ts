@@ -1,5 +1,5 @@
 import { Injectable} from '@angular/core';
-import { MdDialog } from '@angular/material';
+import { MatDialog } from '@angular/material';
 import { MessageComponent } from '../components/message/message.component';
 import { SubscriptionComponent } from '../components/subscription/subscription.component'
 import { LoginComponent } from '../components/login/login.component';
@@ -9,7 +9,7 @@ export class AppService {
   // scripts
   loadAPI: Promise<any>;
 
-  constructor(private _dialog: MdDialog) {}
+  constructor(private _dialog: MatDialog) {}
     public addScript(val) {
         if(val === 'share') {
              this.loadAPI = new Promise((resolve) => {

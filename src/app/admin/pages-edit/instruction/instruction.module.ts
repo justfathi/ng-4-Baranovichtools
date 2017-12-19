@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { MdCardModule } from '@angular/material';
+import { MatCardModule } from '@angular/material';
 
 // custom
 import { InstructionComponent } from './instruction.component';
@@ -8,7 +8,7 @@ import { instructionRouter } from './instruction.router';
 @NgModule({
   imports: [
     instructionRouter,
-    MdCardModule
+    MatCardModule
   ],
   declarations: [ InstructionComponent ]
 })

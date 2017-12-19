@@ -1,16 +1,18 @@
 <div class="container unicorn-dark-theme" id='admin-menu' style='position'>
 	<div class='admin-wrapper'>
-      <button md-button [mdMenuTriggerFor]="menuAdmin">
-      	 <md-icon>more_vert</md-icon>
+      <button mat-button [matMenuTriggerFor]="menuAdmin">
+      	 <mat-icon>more_vert</mat-icon>
       	 <span class='menu-label'>Админ </span>
       </button>
-      <md-menu #menuAdmin="mdMenu" class='menu'>
-        <a routerLink="/upload-edit" md-menu-item>загрузки</a>
-        <a routerLink="/meetings-edit" md-menu-item>события</a>
-        <a routerLink="/news-edit" md-menu-item>новости</a>
-        <a routerLink="/friends-edit" md-menu-item>друзья</a>
-        <a routerLink="/instruction" md-menu-item>памятка</a>
-        <button  md-menu-item (click)='logOut()'>выйти</button>
-       </md-menu>
+      <mat-menu #menuAdmin="matMenu" class='menu'>
+        <a routerLink="/upload-edit" mat-menu-item>загрузки</a>
+        <a routerLink="/meetings-edit" mat-menu-item>события</a>
+        <a routerLink="/news-edit" mat-menu-item>новости</a>
+        <a routerLink="/friends-edit" mat-menu-item>друзья</a>
+        <a routerLink="/membership-edit" mat-menu-item>чл.взносы</a>
+        <a routerLink="/subscribers" mat-menu-item>подписчики</a>
+        <a routerLink="/instruction" mat-menu-item>памятка</a>
+        <button  mat-menu-item (click)='logOut()'>выйти</button>
+       </mat-menu>
     </div>
 </div>

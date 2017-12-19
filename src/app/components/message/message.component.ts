@@ -1,7 +1,6 @@
-import { Component, Inject } from '@angular/core';
+import { Component } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-// import { MdDialog, MdDialogRef, MD_DIALOG_DATA } from '@angular/material';
 
 @Component({
   selector: 'app-message',
@@ -29,25 +28,14 @@ export class MessageComponent {
   onSubmit() {
     this.sent = true;
     const {firstname, lastname, email, message} = this.form.value;
-    const date = new Date().toJSON().slice(0,10).replace(/-/g,'/');
-    const html = `
-      <div>From: ${name}</div>
-      <div>Email: <a href="mailto:${email}">${email}</a></div>
-      <div>Date: ${date}</div>
-      <div>Message: ${message}</div>
-    `;
-    let formRequest = { firstname, lastname, email, message, date, html };
-    // this.db.list('/messages').push(formRequest);
-     const headers = new HttpHeaders()
-          .set('Authorization', 'my-auth-token')
-          .set('Content-Type', 'application/json');
-      this.http.post('http://127.0.0.1:3000/sendmail', JSON.stringify(formRequest), {
-      headers: headers
+    let formRequest = { firstname, lastname, email, message };
+    const headers = new HttpHeaders().set('Content-Type', 'application/json');
+      this.http.post('/assets/email.php', JSON.stringify(formRequest), {
+      headers: headers,
+      responseType: 'text'
     })
     .subscribe(data => {
-       if(data === '200'){
-        //console.log(data);
-       }
+
     });
     this.form.reset();
   }

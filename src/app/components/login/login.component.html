@@ -1,12 +1,15 @@
-<p style='text-align: center' *ngIf='!sent'>Войти</p>
+<p style='text-align: center' *ngIf='!sent && brootforce < 7'>Войти</p>
 <p style='text-align: center' *ngIf='sent'>Добро пожаловать в админку</p>
+<p style='text-align: center' *ngIf='brootforce >= 7'>Отдохните вход заблокирован</p>
 <form class="form" [formGroup]="form" (ngSubmit)="onSubmit()">
-  <md-form-field class="full-width">
-    <input mdInput placeholder="Логин" formControlName="email" requred  minlength="3" 
+  <mat-form-field class="full-width">
+    <input matInput placeholder="Логин" formControlName="email" requred  minlength="3" 
            pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,6})+$">
-  </md-form-field>
-   <md-form-field class="full-width">
-    <input mdInput placeholder="Пароль" type="password" formControlName="password" requred  minlength="3">
-  </md-form-field>
-   <button md-button type="submit" [disabled]="form.invalid">Войти</button>
+           <mat-icon class='icon fa fa-sign-in' matSuffix > </mat-icon>
+  </mat-form-field>
+   <mat-form-field class="full-width">
+    <input matInput placeholder="Пароль" type="password" formControlName="password" requred  minlength="3" [type]="hide ? 'password' : 'text'">
+    <mat-icon matSuffix  class='icon' (click)="hide = !hide">{{hide ? 'visibility' : 'visibility_off'}}</mat-icon>
+  </mat-form-field>
+   <button mat-button type="submit" [disabled]="form.invalid">Войти</button>
 </form>

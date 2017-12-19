@@ -1,0 +1,23 @@
+<div class="container mat-elevation-z3">
+  <mat-card style='max-width: 300px; margin: 0 auto'>
+    <p style='text-align: center' *ngIf='!sent'>Изменить стоимость взносов</p>
+    <p style='text-align: center' *ngIf='sent'>Стоимость изменена</p>
+    <form class="form" [formGroup]="form" (ngSubmit)="onSubmit()">
+    <mat-form-field class="full-width">
+      <input [(ngModel)]='a' matInput placeholder="Низкий доход / BYN" type='number' formControlName="a" requred  minlength="1">
+    </mat-form-field>
+     <mat-form-field class="full-width">
+      <input [(ngModel)]='b' matInput placeholder="Студент / BYN" type='number' formControlName="b" requred  minlength="1">
+    </mat-form-field>
+    <mat-form-field class="full-width">
+      <input [(ngModel)]='c' matInput placeholder="Индивидуальное / BYN" type='number' formControlName="c"  required minlength="1" >
+    </mat-form-field>
+    <mat-form-field class="full-width">
+     	 <input [(ngModel)]='d' matInput placeholder="Buy-One, Give-One / BYN" type='number' formControlName="d"  required minlength="1" >
+    </mat-form-field>
+    <div style='text-align: center'>
+    <button mat-button class='btn' type="submit" [disabled]="form.invalid">Подтвердить</button>
+    </div>
+  </form>
+    </mat-card>
+</div>

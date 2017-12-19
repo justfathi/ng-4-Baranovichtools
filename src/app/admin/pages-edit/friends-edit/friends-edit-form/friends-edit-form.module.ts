@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { MdFormFieldModule, MdInputModule, MdButtonModule } from '@angular/material';
+import { MatFormFieldModule, MatInputModule, MatButtonModule } from '@angular/material';
 
 // custom
 import { FriendsEditFormComponent } from './friends-edit-form.component';
@@ -11,9 +11,9 @@ import { FriendsEditFormComponent } from './friends-edit-form.component';
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
-    MdFormFieldModule,
-    MdInputModule,
-    MdButtonModule
+    MatFormFieldModule,
+    MatInputModule,
+    MatButtonModule
   ],
   exports: [ FriendsEditFormComponent ],
   declarations: [ FriendsEditFormComponent ]

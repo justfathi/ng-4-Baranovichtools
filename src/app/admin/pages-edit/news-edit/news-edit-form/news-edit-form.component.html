@@ -1,45 +1,45 @@
 <form class="form" [formGroup]="form">
   <div class='card-left'>
-    <md-form-field class="full-width">
-        <input mdInput type='number' placeholder="Приоритет" [(ngModel)]='order' formControlName="order" requred minlength="1">
-    </md-form-field>
-    <md-form-field class="full-width" hidden>
-      <input mdInput placeholder="Аватар" [(ngModel)]='avatar' formControlName="avatar" requred minlength="3">
-    </md-form-field>
-    <md-form-field class="full-width">
-      <input mdInput placeholder="Заголовок" [(ngModel)]='title' formControlName="title" requred minlength="3">
-    </md-form-field>
-    <md-form-field class="full-width">
-      <input mdInput placeholder="Подзаголовок" [(ngModel)]='subtitle' formControlName="subtitle" requred minlength="3">
-    </md-form-field>
-    <md-form-field class="full-width">
-      <textarea mdInput placeholder="Текст" rows="10" cols='30' [(ngModel)]='text' formControlName="text" requred minlength="100"> </textarea>
-    </md-form-field>
-    <md-input-container>
-      <input mdInput [mdDatepicker]="picker" [(ngModel)]='date' formControlName="date" requred minlength="3" placeholder="Выберите дату">
-      <md-datepicker-toggle mdSuffix [for]="picker"></md-datepicker-toggle>
-      <md-datepicker #picker></md-datepicker>
-    </md-input-container>
-    <md-datepicker #picker></md-datepicker>
-    <md-form-field class="full-width" hidden>
-      <input mdInput placeholder="Имя" [(ngModel)]='name' formControlName="name" requred minlength="3">
-    </md-form-field>
-    <md-form-field class="full-width" hidden>
-      <input mdInput placeholder="Ссылка" [(ngModel)]='url' formControlName="url" requred minlength="3">
-    </md-form-field>
+    <mat-form-field class="full-width">
+        <input matInput type='number' placeholder="Приоритет" [(ngModel)]='order' formControlName="order" requred minlength="1">
+    </mat-form-field>
+    <mat-form-field class="full-width" hidden>
+      <input matInput placeholder="Аватар" [(ngModel)]='avatar' formControlName="avatar" requred minlength="3">
+    </mat-form-field>
+    <mat-form-field class="full-width">
+      <input matInput placeholder="Заголовок" [(ngModel)]='title' formControlName="title" requred minlength="3">
+    </mat-form-field>
+    <mat-form-field class="full-width">
+      <input matInput placeholder="Подзаголовок" [(ngModel)]='subtitle' formControlName="subtitle" requred minlength="3">
+    </mat-form-field>
+    <mat-form-field class="full-width">
+      <textarea matInput placeholder="Текст" rows="10" cols='30' [(ngModel)]='text' formControlName="text" requred minlength="100"> </textarea>
+    </mat-form-field>
+    <mat-input-container>
+      <input matInput [matDatepicker]="picker" [(ngModel)]='date' formControlName="date" requred minlength="3" placeholder="Выберите дату">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-input-container>
+    <mat-datepicker #picker></mat-datepicker>
+    <mat-form-field class="full-width" hidden>
+      <input matInput placeholder="Имя" [(ngModel)]='name' formControlName="name" requred minlength="3">
+    </mat-form-field>
+    <mat-form-field class="full-width" hidden>
+      <input matInput placeholder="Ссылка" [(ngModel)]='url' formControlName="url" requred minlength="3">
+    </mat-form-field>
   </div>
   <div class='card-right'>
     <div class='card-right-img'>
       <p>Картинка : {{name}}</p>
-      <img md-card-image *ngIf='url == undefined' src="assets/img/no_image.jpg" class='no-image' alt="">
+      <img mat-card-image *ngIf='url == undefined' src="assets/img/no_image.jpg" class='no-image' alt="">
     </div>
-    <md-card class='new-image'>
-      <img md-card-image *ngIf='url !== undefined' src="{{url}}" alt="{{name}}">
-    </md-card>
+    <mat-card class='new-image'>
+      <img mat-card-image *ngIf='url !== undefined' src="{{url}}" alt="{{name}}">
+    </mat-card>
     <div class='actions-wrapper'>
-      <button md-button class='btn' (click)='openAvatarPicker()'>Добавить аватар</button>
-      <button md-button class='btn' (click)='openImgPicker()'>Добавить картинку</button>
-      <button md-button class='btn' type="submit" [disabled]="form.invalid" (click)='send()'>Сохранить</button>
+      <button mat-button class='btn' (click)='openAvatarPicker()'>Добавить аватар</button>
+      <button mat-button class='btn' (click)='openImgPicker()'>Добавить картинку</button>
+      <button mat-button class='btn' type="submit" [disabled]="form.invalid" (click)='send()'>Сохранить</button>
     </div>
   </div>
 </form>

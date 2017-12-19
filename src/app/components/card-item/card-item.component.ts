@@ -1,11 +1,12 @@
 import { Component, Input } from '@angular/core';
-import { AppService } from '../../main-services/app.service'
+import { AppService } from '../../main-services/app.service';
 import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-card-item',
   templateUrl: './card-item.component.html',
-  styleUrls: ['./card-item.component.scss']
+  styleUrls: ['./card-item.component.scss'],
+  providers: [ AppService ],
 })
 export class CardItemComponent {
   @Input() dateText: string;

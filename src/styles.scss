@@ -1,7 +1,5 @@
-/* You can add global styles to this file, and also import other style files */
 @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
 @import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css);
-// @import '~@angular/material/prebuilt-themes/indigo-pink.css'
 @import './unicorn-app-theme.scss';
 
 body {
@@ -9,7 +7,6 @@ body {
   padding: 0;
   font-family: 'Libre Franklin', sans-serif;
   line-height: 1.6;
-  background-color: #323941;
 }
 
 h1,
@@ -100,8 +97,8 @@ a {
   width:100%;
   height:100%;
   position:absolute;
-  // background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(27,32,48,1) 100%);
-  background-image: url('http://oky.16mb.com/MYpublic/BTL/assets/img/dott.png');
+  // http://oky.16mb.com/MYpublic/BTL/
+  background-image: url('assets/img/dott.png');
   background-repeat: repeat;
   bottom:0;
   left:0;
@@ -119,17 +116,17 @@ a {
     -webkit-backface-visibility: hidden;
     -webkit-transform: translateZ(0) scale(1.0, 1.0);
     transform: translateZ(0);
-  //http://oky.16mb.com/MYpublic/BTL/
-  background: #eee url('http://oky.16mb.com/MYpublic/BTL/assets/img/banner1.jpg') top center no-repeat;
+  background: #eee url('assets/img/banner1.jpg') top center no-repeat;
   background-size:cover;
   background-attachment:fixed;
+  animation-delay: 5s;
   animation: grow 60s  linear 10ms infinite;
   transition:all 0.2s ease-in-out;
   z-index: 0;
 }
 
 @keyframes grow{
-  0% { transform:scale(1);}
+  0% { transform:scale(1)}
   50% { transform:scale(1.2)}
 }
 

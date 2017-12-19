@@ -1,11 +1,11 @@
 <section>
   <h2>СОБЫТИЯ</h2>
   <div *ngIf='showProgress' class='unicorn-dark-theme progressWrapper'>
-    <md-progress-bar mode="indeterminate" color='accent' class='mat-elevation-z1'>
-    </md-progress-bar>
+    <mat-progress-bar mode="indeterminate" color='accent' class='mat-elevation-z1'>
+    </mat-progress-bar>
   </div>
   <div class="container" >
-    <div class='wrapper' *ngIf='!showProgress'>
+    <div class='wrapper'>
       <div *ngFor="let meeting of meetings | async">
         <app-card-item [item]='meeting' [dateText]='dateText'></app-card-item>
       </div>

@@ -1,20 +1,19 @@
-<!-- <img src="../../../assets/img/giphy.gif" alt="" > -->
 <p style='text-align: center' *ngIf='!sent'>Оставить сообщение</p>
 <p style='text-align: center' *ngIf='sent'>Сообщение отправлено</p>
   <form class="form" [formGroup]="form" (ngSubmit)="onSubmit()">
-    <md-form-field class="full-width">
-      <input mdInput placeholder="Имя" formControlName="firstname" requred  minlength="3">
-    </md-form-field>
-     <md-form-field class="full-width">
-      <input mdInput placeholder="Фамилия" formControlName="lastname" requred  minlength="3">
-    </md-form-field>
-    <md-form-field class="full-width">
-      <input mdInput placeholder="Почта" formControlName="email"  required
-            pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,6})+$">
-    </md-form-field>
-    <md-form-field class="full-width">
-      <textarea mdInput  placeholder="Сообщение" rows="3" formControlName="message" requred  minlength="7"></textarea>
-    </md-form-field>
-    <button md-button type="submit" [disabled]="form.invalid">Послать</button>
+    <mat-form-field class="full-width">
+      <input matInput placeholder="Имя" formControlName="firstname" requred  minlength="3" maxlength="50">
+    </mat-form-field>
+     <mat-form-field class="full-width">
+      <input matInput placeholder="Фамилия" formControlName="lastname" requred  minlength="3" maxlength="50">
+    </mat-form-field>
+    <mat-form-field class="full-width">
+      <input matInput placeholder="Почта" formControlName="email"  required
+            pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,6})+$" maxlength="50">
+    </mat-form-field>
+    <mat-form-field class="full-width">
+      <textarea matInput  placeholder="Сообщение" rows="3" formControlName="message" requred  minlength="7"></textarea>
+    </mat-form-field>
+    <button mat-button type="submit" [disabled]="form.invalid">Послать</button>
   </form>
 

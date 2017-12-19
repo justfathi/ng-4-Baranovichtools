@@ -1,9 +1,9 @@
-<md-card class='meetings-window'>
-  <a md-button class='btn' routerLink="/meetings"><span mdTooltip="Смотреть все события">Календарь событий</span></a>
+<mat-card class='meetings-window'>
+  <button mat-button class='btn' (click)='toMeetings()'><span matTooltip="Смотреть все события">Календарь событий</span></button>
   <ul>
   	<li *ngFor="let meeting of meetings | async">
   		<span class='window-date'> {{meeting.date | date: 'dd/MM/yyyy'}}</span>
 		<span class='window-title'> {{meeting.title}} </span>
   	</li>
  </ul>
-</md-card>
+</mat-card>

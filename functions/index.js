@@ -11,7 +11,7 @@ const mailTransport = nodemailer.createTransport({
     secure: false,
     auth: {
       user: 'kostyaokylich@gmail.com',
-      pass: 'oky123321'
+      pass: '*********'
     }
   });
 
@@ -27,7 +27,6 @@ exports.sendContactMessage = functions.database.ref('/messages/{pushKey}').onWri
   const val = snapshot.val();
   const mailOptions = {
     from: 'developer',
-    // to: 'TLBaranovichy@tut.by',
     to: 'Okylich@tut.by',
     subject: `Information Request from ${val.name}`,
     html: val.html

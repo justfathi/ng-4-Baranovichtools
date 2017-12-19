@@ -1,0 +1,52 @@
+<div class="container mat-elevation-z3">
+   <mat-expansion-panel style='max-width: 550px; margin: 0 auto'>
+      <mat-expansion-panel-header>
+        <mat-panel-description>
+          Выбрать подписчиков
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <mat-card>
+       <mat-panel-title class="checkbox-margin">
+          <mat-checkbox 
+            [(ngModel)]="itemSelect" 
+            (change)="itemSelect == !itemSelect"
+            (click)='forEachCheckBox()'
+          >
+            Выделить всеx</mat-checkbox>
+        </mat-panel-title>
+        <br/>
+      <mat-checkbox
+         class="checkbox-margin"
+         *ngFor="let subscriber of subscribers | async; index as i" 
+         [value]="subscriber.email"
+         [checked]="itemSelect"
+         (change)="selectEmail($event)"
+      >
+        {{subscriber.email}}
+      </mat-checkbox>
+       </mat-card>
+    </mat-expansion-panel>
+   <!--  <p style='text-align: center'>{{arrOfEmails | json}}</p> -->
+  <br/>
+
+   <mat-card style='max-width: 500px; margin: 0 auto'>
+  <p style='text-align: center' *ngIf='!sent'>Разослать подписчикам сообщение</p>
+  <p style='text-align: center' *ngIf='sent'>Сообщение отправлено</p>
+  <form class="form" [formGroup]="form" (ngSubmit)="onSubmit()">
+    <mat-form-field class="full-width">
+      <textarea 
+          matInput  
+          placeholder="Сообщение" rows="7" 
+          formControlName="message" 
+          requred  minlength="10"
+      ></textarea>
+    </mat-form-field>
+     <mat-form-field class="full-width">
+      <input matInput placeholder="Ссылка / не обязательно" formControlName="link">
+    </mat-form-field>
+    <div class='align'>
+       <button mat-button type="submit" class='btn' [disabled]="form.invalid">Послать</button>
+    </div>
+  </form>
+ </mat-card>
+</div>

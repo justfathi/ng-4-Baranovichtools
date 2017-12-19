@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MatExpansionModule, MdButtonModule } from '@angular/material';
+import { MatExpansionModule, MatButtonModule } from '@angular/material';
 // custom
 import { UploadEditComponent } from './upload-edit.component';
 import { UploadFormModule } from './upload-form/upload-form.module';
@@ -12,7 +12,7 @@ import { uploadEditRouter } from './upload-edit.router';
     CommonModule,
     MatExpansionModule,
     UploadFormModule,
-    MdButtonModule
+    MatButtonModule
   ],
   declarations: [ UploadEditComponent ]
 })

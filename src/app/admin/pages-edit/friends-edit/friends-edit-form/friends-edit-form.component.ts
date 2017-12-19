@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { MdDialog } from '@angular/material';
+import { MatDialog } from '@angular/material';
 import { FriendsEditService } from '../friends-edit-service/friends-edit.service';
 import { ImgPickerComponent } from '../../../img-picker/img-picker.component';
  
@@ -32,7 +32,7 @@ export class FriendsEditFormComponent {
   constructor(
     private fb: FormBuilder, 
     private friendsEditService: FriendsEditService,
-    private _dialog: MdDialog
+    private _dialog: MatDialog
     ) { 
   	this.createForm();
     this.uploads = this.friendsEditService.getUploads();

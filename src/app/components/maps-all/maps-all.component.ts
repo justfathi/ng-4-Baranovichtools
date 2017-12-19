@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 
 declare var ymaps: any;
-declare var jQuery: any;
+// declare var jQuery: any;
 
 interface YandexMap extends MVCObject {
     constructor(el: HTMLElement, opts?: any): void;

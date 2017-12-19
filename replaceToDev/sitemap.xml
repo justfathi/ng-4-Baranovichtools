@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<url>
+  <loc>https://baranovichytools.ru/home</loc>
+  <lastmod>2017-11-16T17:45:29+00:00</lastmod>
+  <priority>0.7</priority>
+</url>
+<url>
+  <loc>https://baranovichytools.ru/meetings</loc>
+  <lastmod>2017-11-16T17:45:29+00:00</lastmod>
+  <priority>0.8</priority>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>https://baranovichytools.ru/news</loc>
+  <lastmod>2017-11-16T17:45:29+00:00</lastmod>
+  <priority>0.8</priority>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>https://baranovichytools.ru/membership</loc>
+  <lastmod>2017-11-16T17:45:29+00:00</lastmod>
+  <priority>0.8</priority>
+</url>
+<url>
+  <loc>https://baranovichytools.ru/history</loc>
+  <priority>0.5</priority>
+  <lastmod>2017-11-16T17:45:29+00:00</lastmod>
+</url>
+<url>
+  <loc>https://baranovichytools.ru/friends</loc>
+  <priority>0.7</priority>
+  <lastmod>2017-11-16T17:45:29+00:00</lastmod>
+</url>
+<url>
+  <loc>https://baranovichytools.ru/help</loc>
+   <priority>0.6</priority>
+  <lastmod>2017-11-16T17:45:29+00:00</lastmod>
+</url>
+</urlset>

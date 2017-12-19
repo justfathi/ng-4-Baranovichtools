@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { MdDialog } from '@angular/material';
+import { MatDialog } from '@angular/material';
 import { MeetingsEditService } from '../meeting-edit-service/meetings-edit.service';
 import { ImgPickerComponent } from '../../../img-picker/img-picker.component';
 
@@ -35,7 +35,7 @@ export class MeetingEditFormComponent implements OnInit {
   constructor(
     private fb: FormBuilder, 
     private meetingsEditService: MeetingsEditService,
-    private _dialog: MdDialog
+    private _dialog: MatDialog
     ) { 
   	this.createForm();
     this.uploads = this.meetingsEditService.getUploads();

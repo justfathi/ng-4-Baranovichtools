@@ -1,5 +1,5 @@
 import { Component, Inject } from '@angular/core';
-import { MdDialogRef, MD_DIALOG_DATA} from '@angular/material';
+import { MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
 
 @Component({
   selector: 'app-img-picker',
@@ -7,7 +7,7 @@ import { MdDialogRef, MD_DIALOG_DATA} from '@angular/material';
   styleUrls: ['./img-picker.component.scss']
 })
 export class ImgPickerComponent {
-  constructor(public imgPicker: MdDialogRef<ImgPickerComponent>, @Inject(MD_DIALOG_DATA) public data: any
+  constructor(public imgPicker: MatDialogRef<ImgPickerComponent>, @Inject(MAT_DIALOG_DATA) public data: string
   ) { }
 
 

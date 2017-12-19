@@ -1,9 +1,7 @@
 import { Component, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { MdDialog, MdDialogRef, MD_DIALOG_DATA } from '@angular/material';
-//import { AppService } from '../../main-services/app.service';
-
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 
 @Component({
   selector: 'app-subscription',
@@ -12,6 +10,8 @@ import { MdDialog, MdDialogRef, MD_DIALOG_DATA } from '@angular/material';
 })
 
 export class SubscriptionComponent {
+  selected = 'toSubscribe';
+  html: string;
   form: FormGroup;
   sent: boolean;
 
@@ -28,26 +28,31 @@ export class SubscriptionComponent {
     });
   }
 
+  choose(val) { this.selected = val; }
+
   onSubmit() {
     this.sent = true;
     const { firstname, lastname, email } = this.form.value;
-    const date = new Date().toJSON().slice(0,10).replace(/-/g,'/');
-    let formRequest = { firstname, lastname, email, date };
-    // this.db.list('/messages').push(formRequest);
-     const headers = new HttpHeaders()
-          .set('Authorization', 'my-auth-token')
-          .set('Content-Type', 'application/json');
-      this.http.post('http://127.0.0.1:3000/subscription', JSON.stringify(formRequest), {
-      headers: headers
-    })
-    .subscribe(data => {
-      if(data === '200') {
-         //console.log(data)
-       }
-    });
+    const formRequest = { firstname, lastname, email };
+    const headers = new HttpHeaders().set('Content-Type', 'application/json');
+    if(this.selected === 'toSubscribe')  this.sendSubscription(formRequest, headers);
+    if(this.selected === 'toUnsubscribe') this.sendUnsubscription(formRequest, headers);
     this.form.reset();
   }
 
+  sendSubscription(formRequest, headers) {
+    this.http.post('/assets/subscription.php', JSON.stringify(formRequest), {
+      headers: headers,
+      responseType: 'text'
+    }).subscribe(data => {});
+  }
+
+  sendUnsubscription(formRequest, headers) {
+    this.http.post('/assets/unsubscription.php', JSON.stringify(formRequest), {
+      headers: headers,
+      responseType: 'text'
+    }).subscribe(data => {});
+  }
 }
 
 

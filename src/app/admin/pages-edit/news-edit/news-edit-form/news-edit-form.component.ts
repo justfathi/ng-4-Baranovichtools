@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { MdDialog } from '@angular/material';
+import { MatDialog } from '@angular/material';
 import { NewsEditService } from '../news-edit-service/news-edit.service';
 import { ImgPickerComponent } from '../../../img-picker/img-picker.component';
 
@@ -35,7 +35,7 @@ export class NewsEditFormComponent implements OnInit {
   constructor(
     private fb: FormBuilder, 
     private newsEditService: NewsEditService,
-    private _dialog: MdDialog
+    private _dialog: MatDialog
     ) { 
   	this.createForm();
     this.uploads = this.newsEditService.getUploads();

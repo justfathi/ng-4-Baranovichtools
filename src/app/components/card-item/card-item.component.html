@@ -1,20 +1,20 @@
-<md-card class='clearfix'>
+<mat-card class='clearfix'>
    <p class='card-date'><span>{{dateText}} </span> {{item.date | date: 'dd/MM/yyyy'}}</p>
-  <md-card-header class='card-header'>
-     <div md-card-avatar class="card-header-image"  [ngStyle]="{'background-image': 'url(' + item.avatar + ')'}"></div>
-    <md-card-title>{{item.title}}</md-card-title>
-    <md-card-subtitle>{{item.subtitle}}</md-card-subtitle>
+  <mat-card-header class='card-header'>
+     <div mat-card-avatar class="card-header-image"  [ngStyle]="{'background-image': 'url(' + item.avatar + ')'}"></div>
+    <mat-card-title>{{item.title}}</mat-card-title>
+    <mat-card-subtitle>{{item.subtitle}}</mat-card-subtitle>
 
-  </md-card-header>
+  </mat-card-header>
 
   <div class='img-wrapper'>
     <img src="{{item.url}}" alt='{{item.name}}' class='img mat-elevation-z3'>
   </div>
-  <md-card-content>
+  <mat-card-content>
     <p>{{item.text}}</p>
-  </md-card-content>
-  <md-card-actions class='card-actions'>
+  </mat-card-content>
+  <mat-card-actions class='card-actions'>
    <div class="ya-share2" data-services="collections,facebook,odnoklassniki,gplus,moimir,vkontakte,twitter,skype" data-limit="6"></div>
-   </md-card-actions>
-</md-card>
+   </mat-card-actions>
+</mat-card>
 

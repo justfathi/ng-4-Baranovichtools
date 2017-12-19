@@ -2,12 +2,12 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { 
-  MdFormFieldModule, 
-  MdInputModule,
-  MdButtonModule, 
-  MdDatepickerModule, 
-  MdCardModule,  
-  MdNativeDateModule, 
+  MatFormFieldModule, 
+  MatInputModule,
+  MatButtonModule, 
+  MatDatepickerModule, 
+  MatCardModule,  
+  MatNativeDateModule, 
 } from '@angular/material';
 
 // custom
@@ -18,12 +18,12 @@ import { MeetingEditFormComponent } from './meeting-edit-form.component';
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
-    MdFormFieldModule,
-    MdNativeDateModule,
-    MdDatepickerModule,
-    MdCardModule,
-    MdInputModule,
-    MdButtonModule
+    MatFormFieldModule,
+    MatNativeDateModule,
+    MatDatepickerModule,
+    MatCardModule,
+    MatInputModule,
+    MatButtonModule
   ],
   exports: [ MeetingEditFormComponent ],
   declarations: [ MeetingEditFormComponent ]

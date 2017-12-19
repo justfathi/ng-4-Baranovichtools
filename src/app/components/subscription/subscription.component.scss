@@ -1,8 +1,16 @@
-.mat-button {
+.submit {
 	background-color: #323941;
 	color: #fff; 
 	width:100%;
 	margin-top: 20px;
+}
+.btn-wrapper {
+	text-align: center;
+	margin-bottom: 10px;
+}
+.btn-s {
+	background-color: #f0f0f0;
+	margin: 5px 0;
 }
 .form {
   min-width: 150px;
@@ -11,4 +19,8 @@
 
 .full-width {
   width: 100%;
+}
+
+.active {
+	background-color:#e0e0e0;
 }

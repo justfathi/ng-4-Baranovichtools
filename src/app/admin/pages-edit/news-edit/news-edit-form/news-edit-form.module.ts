@@ -2,12 +2,12 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { 
-  MdCardModule, 
-  MdFormFieldModule,
-  MdInputModule,
-  MdButtonModule, 
-  MdDatepickerModule, 
-  MdNativeDateModule,
+  MatCardModule, 
+  MatFormFieldModule,
+  MatInputModule,
+  MatButtonModule, 
+  MatDatepickerModule, 
+  MatNativeDateModule,
 } from '@angular/material';
 
 // custom
@@ -18,12 +18,12 @@ import { NewsEditFormComponent } from './news-edit-form.component';
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
-    MdFormFieldModule,
-    MdDatepickerModule,
-    MdNativeDateModule,
-    MdCardModule,
-    MdInputModule,
-    MdButtonModule
+    MatFormFieldModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatCardModule,
+    MatInputModule,
+    MatButtonModule
   ],
   exports: [ NewsEditFormComponent ],
   declarations: [ NewsEditFormComponent ]

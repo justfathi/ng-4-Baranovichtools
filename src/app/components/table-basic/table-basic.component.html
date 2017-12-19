@@ -1,17 +1,16 @@
 <div class="example-container mat-elevation-z1">
-  <md-table #table [dataSource]="dataSource">
-    <ng-container mdColumnDef="day">
-      <md-header-cell *mdHeaderCellDef>День недели:</md-header-cell>
-      <md-cell *mdCellDef="let element"> {{element.day}} </md-cell>
+  <h3>График работы </h3>
+  <mat-table #table [dataSource]="dataSource">
+    <ng-container matColumnDef="day">
+      <mat-header-cell *matHeaderCellDef>День недели:</mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.day}} </mat-cell>
     </ng-container>
-
     <!-- Name Column -->
-    <ng-container mdColumnDef="time">
-      <md-header-cell *mdHeaderCellDef>Время работы:</md-header-cell>
-      <md-cell *mdCellDef="let element"> {{element.time}} </md-cell>
+    <ng-container matColumnDef="time">
+      <mat-header-cell *matHeaderCellDef>Время работы:</mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.time}} </mat-cell>
     </ng-container>
-
-     <md-header-row *mdHeaderRowDef="displayedColumns"></md-header-row>
-    <md-row *mdRowDef="let row; columns: displayedColumns;"></md-row>
-  </md-table>
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  </mat-table>
 </div>

@@ -1,0 +1,15 @@
+.middle {
+	position: absolute;
+	text-align: center;
+	top: 150px;
+	left: calc(50% - 174px);
+	max-width:300px;
+	z-index: 1;
+}
+
+@media (max-width: 400px) {
+	.middle {
+		max-width: 200px;
+		left: calc(50% - 115px);
+	}
+}

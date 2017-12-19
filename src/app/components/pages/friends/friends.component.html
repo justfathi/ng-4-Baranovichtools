@@ -1,15 +1,15 @@
 <section>
   <h2>НАШИ ДРУЗЬЯ</h2>
    <div *ngIf='showProgress' class='unicorn-dark-theme progressWrapper'>
-    <md-progress-bar mode="indeterminate" color='accent' class='mat-elevation-z1'>
-    </md-progress-bar>
+    <mat-progress-bar mode="indeterminate" color='accent' class='mat-elevation-z1'>
+    </mat-progress-bar>
   </div>
   <div class="container mat-elevation-z3">
-    <div id="friends" *ngIf='!showProgress'>
+    <div id="friends">
       <div class="gallery-grids">
         <div class="gallery-top" *ngFor="let friend of friends | async">
           <div class="effect-bubba">
-            <a href="{{friend.link}}" target='_blank'>
+            <a href="{{friend.link}}" rel="noopener" target='_blank'>
             <img src="{{friend.url}}" alt="" class="img-responsive">
             <div class='figcaption'>
               <h4>{{friend.title}}</h4>
