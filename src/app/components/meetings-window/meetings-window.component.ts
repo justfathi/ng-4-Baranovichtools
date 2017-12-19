@@ -14,5 +14,8 @@ meetings: Observable<any[]>
    this.meetings = this.db.list('meetings', ref => ref.orderByChild('order').limitToLast(3)).valueChanges();
   }
 
- toMeetings() {this.router.navigateByUrl('/meetings')};
+ toMeetings() {
+ 	this.router.navigateByUrl('/meetings')
+ 	window.scroll(0, 0);
+ };
 }

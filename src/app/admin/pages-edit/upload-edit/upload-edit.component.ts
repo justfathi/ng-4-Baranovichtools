@@ -25,7 +25,6 @@ export class UploadEditComponent {
    deleteFile(item) {
     let confirm = this._dialog.open(ConfirmComponent, { data: 'Yes'});
     confirm.afterClosed().subscribe(result => {
-      console.log(result)
       if(result !== undefined) {
           if(result === 'Yes') this.upl.deleteUpload(item)
         }
